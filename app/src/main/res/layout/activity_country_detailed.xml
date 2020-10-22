@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryDetailedActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+    <TextView
+        android:id="@+id/countryNameDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Country Name"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlack"
+        android:textSize="30sp"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/countryNameDisplay"
+        >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Cases"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/casesTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:paddingStart="10dp"
+                android:text="-"
+                android:textColor="@color/colorBlack"
+                />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Cases"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/todayCasesTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textAlignment="textEnd"
+                android:paddingStart="10dp"
+                android:text="-"
+                android:textColor="@color/colorBlack"
+                />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Deaths"
+                android:textColor="@color/colorRed"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/deathsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textAlignment="textEnd"
+                android:paddingStart="10dp"
+                android:text="-"
+                android:textColor="@color/colorRed"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Deaths"
+                android:textSize="18sp"
+                android:textColor="@color/colorRed"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/todayDeathTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textAlignment="textEnd"
+                android:paddingStart="10dp"
+                android:text="-"
+                android:textColor="@color/colorRed"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Recoveries"
+                android:textSize="18sp"
+                android:textColor="@color/colorGreen"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/recoveredTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textAlignment="textEnd"
+                android:paddingStart="10dp"
+                android:text="-"
+                android:textColor="@color/colorGreen"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Recoveries"
+                android:textColor="@color/colorGreen"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/todayRecoveredTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="10dp"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                android:text="-"
+                android:textColor="@color/colorGreen"
+                />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorGray3"
+            android:layout_below="@+id/table"
+            android:layout_marginTop="15dp"
+            />
+
+
+
+        <com.anychart.AnyChartView
+            android:id="@+id/anyChartView"
+            android:layout_marginStart="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@id/view"
+            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="25dp"
+            />
+
+    </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+</RelativeLayout>
